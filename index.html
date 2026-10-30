@@ -3,24 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Simulador de Biriba - Evolução Militar</title>
-  <meta name="description" content="Personalize sua biriba bordada oficial do Colégio Militar para agasalho ou farda e encomende pelo WhatsApp.">
+  <title>Simulador de Bordados - Evolução Militar</title>
+  <meta name="description" content="Personalize sua biriba oficial, divisa de série e divisa de turno do Colégio Militar e encomende pelo WhatsApp.">
   <meta name="theme-color" content="#0b0f0c">
   
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="Biriba Militar">
+  <meta name="apple-mobile-web-app-title" content="Bordados CPM">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Oswald:wght@700;900&display=swap" rel="stylesheet">
   
   <style>
     :root {
       --cor-linha: #132c8c;
       --cor-fundo-tecido: #ffffff;
+      --cor-turno: #132c8c;
     }
 
     .embroidered-text {
@@ -55,6 +56,34 @@
         repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 2px, transparent 2px, transparent 4px),
         repeating-linear-gradient(-45deg, rgba(0, 0, 0, 0.35) 0px, rgba(0, 0, 0, 0.35) 2px, transparent 2px, transparent 4px);
     }
+
+    /* Divisa de Série (Estilo Bordado CPM Oficial) */
+    .fabric-divisa {
+      background-color: #f1f3f5;
+      background-image: 
+        radial-gradient(#9ca3af 1.2px, transparent 1.2px),
+        radial-gradient(#9ca3af 1.2px, #f8fafc 1.2px);
+      background-size: 6px 6px;
+      background-position: 0 0, 3px 3px;
+    }
+
+    .divisa-frame {
+      border: 6px solid #132c8c;
+      box-shadow: 
+        0 6px 16px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1.5px rgba(255, 255, 255, 0.6),
+        inset 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+    .divisa-number {
+      font-family: 'Oswald', 'Montserrat', Arial, sans-serif;
+      font-weight: 900;
+      color: #132c8c;
+      text-shadow: 
+        1px 1px 0px rgba(0, 0, 0, 0.4),
+        -0.5px -0.5px 0px rgba(255, 255, 255, 0.7);
+      filter: drop-shadow(1px 2px 2px rgba(0, 0, 0, 0.35));
+    }
   </style>
 </head>
 <body class="bg-[#0b0f0c] text-gray-100 min-h-screen flex items-center justify-center p-3 sm:p-5 font-sans select-none">
@@ -68,15 +97,19 @@
           EVOLUÇÃO MILITAR
         </div>
         <div class="text-[10px] text-gray-400 font-mono tracking-wider mt-1 uppercase">
-          Artigos Militares & Bordados
+          Artigos Militares & Bordados CPM
         </div>
       </div>
 
-      <!-- Preço Unitário -->
-      <div class="flex items-baseline bg-[#eab308] text-[#1a1300] px-3 py-1.5 rounded-xl font-extrabold shadow-lg">
-        <span class="text-xs mr-0.5 font-bold">R$</span>
-        <span class="text-xl sm:text-2xl font-black tracking-tight leading-none">20</span>
-        <span class="text-xs ml-0.5">,00</span>
+      <div class="text-right">
+        <span class="text-[10px] text-gray-400 font-mono uppercase block">Tabela CPM</span>
+        <div class="text-xs font-bold text-white flex items-center gap-1 justify-end">
+          <span class="text-lime-400">Biriba R$20</span>
+          <span class="text-gray-500">•</span>
+          <span class="text-amber-400">Série R$10</span>
+          <span class="text-gray-500">•</span>
+          <span class="text-cyan-400">Turno R$10</span>
+        </div>
       </div>
     </div>
 
@@ -84,172 +117,420 @@
     <div class="bg-gradient-to-r from-[#172419] to-[#101b12] px-5 py-3 border-b border-[#2a382c]">
       <div class="flex items-center justify-between">
         <span class="px-2.5 py-0.5 bg-[#233827] text-[#86efac] border border-[#3b593f] rounded-full text-[11px] font-bold uppercase tracking-wider">
-          Padrão Exigido • Colégio Militar
+          Kit Oficial • Colégio Militar
         </span>
-        <span class="text-[11px] font-mono text-gray-400">12,0 cm × 2,5 cm</span>
+        <span class="text-[11px] font-mono text-gray-400">Biriba, Série e Turno</span>
       </div>
       <h1 class="text-sm sm:text-base font-extrabold text-white mt-1 leading-tight">
-        BIRIBA BORDADA OFICIAL
+        MONTE SEU ENXOVAL DE BORDADOS
       </h1>
     </div>
 
-    <div class="p-5 space-y-4">
+    <div class="p-5 space-y-5">
 
-      <!-- 1. Visualizar Modelo: AGASALHO ou FARDA -->
-      <div>
-        <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
-          1. Alternar visualização do modelo:
-        </label>
-        <div class="grid grid-cols-2 gap-2.5">
-          <button 
-            type="button" 
-            onclick="setModelo('AGASALHO')" 
-            id="btn-mod-agasalho" 
-            class="py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md"
-          >
-            <div class="flex items-center gap-1.5">
-              <span class="w-3 h-3 rounded-full bg-[#132c8c] border border-white/60"></span>
-              <span class="text-xs font-extrabold">🧥 AGASALHO</span>
-            </div>
-            <span class="text-[10px] text-gray-300 font-normal">Branca c/ Azul</span>
-          </button>
-
-          <button 
-            type="button" 
-            onclick="setModelo('FARDA')" 
-            id="btn-mod-farda" 
-            class="py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]"
-          >
-            <div class="flex items-center gap-1.5">
-              <span class="w-3 h-3 rounded-full bg-[#f0c20a] border border-black/60"></span>
-              <span class="text-xs font-extrabold">👔 FARDA</span>
-            </div>
-            <span class="text-[10px] text-gray-400 font-normal">Cinza c/ Amarelo</span>
-          </button>
+      <!-- ==================== SEÇÃO 1: BIRIBA ==================== -->
+      <div class="space-y-3.5">
+        <div class="flex items-center justify-between border-b border-[#2a382c] pb-1.5">
+          <span class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+            1. BIRIBA DE IDENTIFICAÇÃO (12 × 2,5 cm)
+          </span>
+          <span class="text-[11px] font-bold text-lime-400 font-mono">R$ 20,00</span>
         </div>
-      </div>
 
-      <!-- 2. Titulação / Posto -->
-      <div>
-        <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
-          2. Titulação / Posto:
-        </label>
-        <div class="grid grid-cols-3 gap-2">
-          <button type="button" onclick="setPosto('ALUNA')" id="btn-aluna" class="posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all">
-            ALUNA
-          </button>
-          <button type="button" onclick="setPosto('ALUNO')" id="btn-aluno" class="posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]">
-            ALUNO
-          </button>
-          <button type="button" onclick="setPosto('')" id="btn-outro" class="posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]">
-            SEM POSTO
-          </button>
+        <!-- 1.1 Alternar visualização da Biriba -->
+        <div>
+          <label class="block text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
+            Modelo para visualização:
+          </label>
+          <div class="grid grid-cols-2 gap-2">
+            <button 
+              type="button" 
+              onclick="setModelo('AGASALHO')" 
+              id="btn-mod-agasalho" 
+              class="py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md"
+            >
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-[#132c8c] border border-white/60"></span>
+                <span class="text-xs font-extrabold">🧥 AGASALHO</span>
+              </div>
+              <span class="text-[10px] text-gray-300 font-normal">Branca c/ Azul</span>
+            </button>
+
+            <button 
+              type="button" 
+              onclick="setModelo('FARDA')" 
+              id="btn-mod-farda" 
+              class="py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]"
+            >
+              <div class="flex items-center gap-1.5">
+                <span class="w-3 h-3 rounded-full bg-[#f0c20a] border border-black/60"></span>
+                <span class="text-xs font-extrabold">👔 FARDA</span>
+              </div>
+              <span class="text-[10px] text-gray-400 font-normal">Cinza c/ Amarelo</span>
+            </button>
+          </div>
         </div>
-      </div>
 
-      <!-- 3. Nome de Guerra -->
-      <div>
-        <label class="block text-xs font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
-          3. Nome a Bordar:
-        </label>
-        <input 
-          type="text" 
-          id="inputNome" 
-          value="MONIQUE" 
-          maxlength="16"
-          class="w-full bg-[#1c261e] border border-[#334636] rounded-xl px-4 py-2.5 text-sm text-white font-bold tracking-wider focus:outline-none focus:border-[#4d7c0f] uppercase"
-          placeholder="EX: MONIQUE / HENRIQUE / SILVA"
-          oninput="renderBiriba()"
-        >
-      </div>
-
-      <!-- Preview Dinâmico da Biriba Oficial -->
-      <div class="bg-[#080b09] p-4 rounded-xl border border-[#232e25] flex flex-col items-center">
-        <div class="w-full flex justify-between items-center mb-2.5 text-[10px] font-mono text-gray-400">
-          <span id="badgeModelo" class="text-lime-400 font-semibold uppercase">VISUALIZANDO: AGASALHO</span>
-          <span>12,0 cm × 2,5 cm</span>
-        </div>
-        
-        <div class="w-full overflow-x-auto py-1 flex justify-center">
-          <div 
-            id="biribaContainer"
-            class="w-[380px] h-[80px] max-w-full fabric-agasalho biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all"
-            style="aspect-ratio: 4.8 / 1;"
-          >
-            <div id="displayPosto" class="embroidered-text text-[28px] font-black leading-[0.95] tracking-tight uppercase text-center">
+        <!-- 1.2 Titulação / Posto -->
+        <div>
+          <label class="block text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
+            Titulação:
+          </label>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="setPosto('ALUNA')" id="btn-aluna" class="posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all">
               ALUNA
-            </div>
-            <div id="displayNome" class="embroidered-text text-[28px] font-black leading-[0.95] tracking-tight uppercase text-center mt-0.5">
-              MONIQUE
-            </div>
-            <div id="innerStitch" class="absolute inset-[3px] border border-dashed border-[#132c8c]/25 pointer-events-none transition-colors"></div>
+            </button>
+            <button type="button" onclick="setPosto('ALUNO')" id="btn-aluno" class="posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]">
+              ALUNO
+            </button>
+            <button type="button" onclick="setPosto('')" id="btn-outro" class="posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]">
+              SEM POSTO
+            </button>
           </div>
         </div>
 
-        <div id="legendaCores" class="flex items-center justify-center gap-4 text-[10px] text-gray-300 mt-3">
-          <span class="flex items-center gap-1">
-            <span id="dotLinha" class="w-2 h-2 rounded-full bg-[#132c8c]"></span>
-            <span id="txtLinha">Linha Oficial</span>
+        <!-- 1.3 Nome de Guerra -->
+        <div>
+          <label class="block text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
+            Nome a Bordar:
+          </label>
+          <input 
+            type="text" 
+            id="inputNome" 
+            value="MONIQUE" 
+            maxlength="16"
+            class="w-full bg-[#1c261e] border border-[#334636] rounded-xl px-4 py-2 text-sm text-white font-bold tracking-wider focus:outline-none focus:border-[#4d7c0f] uppercase"
+            placeholder="EX: MONIQUE / HENRIQUE / SILVA"
+            oninput="renderAll()"
+          >
+        </div>
+
+        <!-- Preview da Biriba -->
+        <div class="bg-[#080b09] p-3.5 rounded-xl border border-[#232e25] flex flex-col items-center">
+          <div class="w-full flex justify-between items-center mb-2 text-[10px] font-mono text-gray-400">
+            <span id="badgeModelo" class="text-lime-400 font-semibold uppercase">PRÉVIA: AGASALHO</span>
+            <span>12,0 cm × 2,5 cm</span>
+          </div>
+          
+          <div class="w-full overflow-x-auto py-1 flex justify-center">
+            <div 
+              id="biribaContainer"
+              class="w-[360px] h-[76px] max-w-full fabric-agasalho biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all"
+              style="aspect-ratio: 4.8 / 1;"
+            >
+              <div id="displayPosto" class="embroidered-text text-[26px] font-black leading-[0.95] tracking-tight uppercase text-center">
+                ALUNA
+              </div>
+              <div id="displayNome" class="embroidered-text text-[26px] font-black leading-[0.95] tracking-tight uppercase text-center mt-0.5">
+                MONIQUE
+              </div>
+              <div id="innerStitch" class="absolute inset-[3px] border border-dashed border-[#132c8c]/25 pointer-events-none transition-colors"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SEÇÃO 2: DIVISA DE SÉRIE ==================== -->
+      <div class="space-y-3.5 border-t border-[#2a382c] pt-4">
+        <div class="flex items-center justify-between border-b border-[#2a382c] pb-1.5">
+          <span class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+            2. DIVISA DE SÉRIE (CPM)
           </span>
-          <span class="flex items-center gap-1">
-            <span id="dotTecido" class="w-2 h-2 rounded-full bg-white border border-gray-400"></span>
-            <span id="txtTecido">Tecido Branco</span>
+          <span class="text-[11px] font-bold text-amber-400 font-mono">R$ 10,00</span>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
+            Selecione a série / ano do aluno:
+          </label>
+
+          <!-- Ensino Fundamental -->
+          <div class="mb-2">
+            <span class="text-[10px] text-gray-400 font-mono uppercase block mb-1">Ensino Fundamental (6 ao 9):</span>
+            <div class="grid grid-cols-4 gap-1.5">
+              <button type="button" onclick="setSerie('6')" id="btn-serie-6" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">6</span>
+                <span class="text-[9px] font-normal text-gray-400">6º Ano</span>
+              </button>
+              <button type="button" onclick="setSerie('7')" id="btn-serie-7" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">7</span>
+                <span class="text-[9px] font-normal text-gray-400">7º Ano</span>
+              </button>
+              <button type="button" onclick="setSerie('8')" id="btn-serie-8" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">8</span>
+                <span class="text-[9px] font-normal text-gray-400">8º Ano</span>
+              </button>
+              <button type="button" onclick="setSerie('9')" id="btn-serie-9" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">9</span>
+                <span class="text-[9px] font-normal text-gray-400">9º Ano</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ensino Médio -->
+          <div>
+            <span class="text-[10px] text-gray-400 font-mono uppercase block mb-1">Ensino Médio (1 ao 3):</span>
+            <div class="grid grid-cols-3 gap-1.5">
+              <button type="button" onclick="setSerie('1')" id="btn-serie-1" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] shadow-md transition-all text-center">
+                <span class="text-base font-black block leading-none">1</span>
+                <span class="text-[9px] font-normal text-gray-300">1º Ano EM</span>
+              </button>
+              <button type="button" onclick="setSerie('2')" id="btn-serie-2" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">2</span>
+                <span class="text-[9px] font-normal text-gray-400">2º Ano EM</span>
+              </button>
+              <button type="button" onclick="setSerie('3')" id="btn-serie-3" class="serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center">
+                <span class="text-base font-black block leading-none">3</span>
+                <span class="text-[9px] font-normal text-gray-400">3º Ano EM</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Preview da Divisa de Série -->
+        <div class="bg-[#080b09] p-3.5 rounded-xl border border-[#232e25] flex flex-col items-center">
+          <div class="w-full flex justify-between items-center mb-2 text-[10px] font-mono text-gray-400">
+            <span class="text-amber-400 font-semibold uppercase">PRÉVIA: DIVISA DE SÉRIE</span>
+            <span id="labelSerieBadge">Nº 1 • 1º ANO EM</span>
+          </div>
+
+          <div class="w-[105px] h-[160px] fabric-divisa divisa-frame rounded-sm flex flex-col items-center justify-between py-3 relative select-none shadow-2xl">
+            <!-- Estrela Bordada 3D Facetada em Azul Royal -->
+            <svg viewBox="0 0 100 100" class="w-14 h-14 drop-shadow-[0_2px_4px_rgba(0,0,0,0.4)]">
+              <polygon points="50,50 50,6 39,35" fill="#1e40af" />
+              <polygon points="50,50 50,6 61,35" fill="#0c1d57" />
+              <polygon points="50,50 92,36 61,35" fill="#2563eb" />
+              <polygon points="50,50 92,36 67,56" fill="#091540" />
+              <polygon points="50,50 76,86 67,56" fill="#1e40af" />
+              <polygon points="50,50 76,86 50,68" fill="#091540" />
+              <polygon points="50,50 24,86 50,68" fill="#2563eb" />
+              <polygon points="50,50 24,86 33,56" fill="#0c1d57" />
+              <polygon points="50,50 8,36 33,56" fill="#1e40af" />
+              <polygon points="50,50 8,36 39,35" fill="#0c1d57" />
+            </svg>
+
+            <!-- Número da Série Bordado -->
+            <div id="divisaNumberDisplay" class="divisa-number text-[62px] font-black leading-none text-center">
+              1
+            </div>
+
+            <div class="absolute inset-[2.5px] border border-dashed border-[#132c8c]/30 pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== SEÇÃO 3: DIVISA DE TURNO ==================== -->
+      <div class="space-y-3.5 border-t border-[#2a382c] pt-4">
+        <div class="flex items-center justify-between border-b border-[#2a382c] pb-1.5">
+          <span class="text-xs font-black text-white uppercase tracking-wider flex items-center gap-1.5">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span>
+            3. DIVISA DE TURNO (MEIA-LUA CPM)
           </span>
-          <span class="flex items-center gap-1">
-            <svg class="w-3 h-3 text-lime-400" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-            Com ou Sem Velcro
+          <span class="text-[11px] font-bold text-cyan-400 font-mono">R$ 10,00</span>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-gray-400 mb-1.5 uppercase tracking-wide">
+            Selecione o turno do aluno:
+          </label>
+          <div class="grid grid-cols-2 gap-2.5">
+            <!-- Botão Turno Manhã -->
+            <button 
+              type="button" 
+              onclick="setTurno('MANHA')" 
+              id="btn-turno-manha" 
+              class="py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md"
+            >
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#132c8c] border border-white/60"></span>
+                <span class="text-xs font-extrabold uppercase">☀️ MANHÃ</span>
+              </div>
+              <span class="text-[10px] text-gray-300 font-normal">Bordado Azul Royal</span>
+            </button>
+
+            <!-- Botão Turno Tarde -->
+            <button 
+              type="button" 
+              onclick="setTurno('TARDE')" 
+              id="btn-turno-tarde" 
+              class="py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]"
+            >
+              <div class="flex items-center gap-2">
+                <span class="w-3.5 h-3.5 rounded-full bg-[#dc2626] border border-white/60"></span>
+                <span class="text-xs font-extrabold uppercase">🌅 TARDE</span>
+              </div>
+              <span class="text-[10px] text-gray-400 font-normal">Bordado Vermelho</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Preview da Divisa de Turno (Meia-Lua em Arco Oficial) -->
+        <div class="bg-[#080b09] p-3.5 rounded-xl border border-[#232e25] flex flex-col items-center">
+          <div class="w-full flex justify-between items-center mb-2 text-[10px] font-mono text-gray-400">
+            <span id="labelTurnoBadge" class="text-cyan-400 font-semibold uppercase">PRÉVIA: MANHÃ (AZUL)</span>
+            <span>PADRÃO OFICIAL CPM</span>
+          </div>
+
+          <!-- SVG da Meia-Lua Curva Fiel ao Anexo Enviado (Tamanho Grande e 100% Centralizado) -->
+          <div class="w-full flex items-center justify-center py-2 px-1">
+            <svg viewBox="0 0 340 125" class="w-full max-w-[340px] h-auto drop-shadow-2xl overflow-visible" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Trama piqué/favo de mel do tecido de fundo fiel ao patch real -->
+                <pattern id="meshPatternTurno" width="5" height="5" patternUnits="userSpaceOnUse">
+                  <rect width="5" height="5" fill="#f8fafc" />
+                  <circle cx="1.5" cy="1.5" r="0.9" fill="#94a3b8" opacity="0.75" />
+                  <circle cx="4" cy="4" r="0.9" fill="#94a3b8" opacity="0.75" />
+                </pattern>
+              </defs>
+
+              <!-- Forma do Patch Meia-Lua com proporções e raios oficiais -->
+              <path id="turnoPatchBg" 
+                    d="M 37.7 63.0 A 225 225 0 0 1 302.3 63.0 L 264.0 115.6 A 160 160 0 0 0 76.0 115.6 Z" 
+                    fill="url(#meshPatternTurno)" 
+                    stroke="#132c8c" 
+                    stroke-width="7" 
+                    stroke-linejoin="round"
+                    style="transition: stroke 0.25s ease;"
+              />
+
+              <!-- Pesponto bordado interno -->
+              <path id="turnoInnerStitch" 
+                    d="M 42 66 A 219 219 0 0 1 298 66 L 261 112 A 166 166 0 0 0 79 112 Z" 
+                    fill="none" 
+                    stroke="rgba(19, 44, 140, 0.3)" 
+                    stroke-width="1.5" 
+                    stroke-dasharray="3.5 3"
+                    style="transition: stroke 0.25s ease;"
+              />
+
+              <!-- Letras MANHÃ: Perfeitamente centralizadas e orientadas radialmente -->
+              <g id="groupTurnoManha" 
+                 font-family="'Montserrat', 'Arial Black', sans-serif" 
+                 font-weight="900" 
+                 font-size="34px" 
+                 fill="#132c8c" 
+                 text-anchor="middle"
+                 style="filter: drop-shadow(0.5px 1.5px 1px rgba(0,0,0,0.35)); transition: fill 0.25s ease;"
+              >
+                <text transform="rotate(-27, 170, 245)" x="170" y="66.5">M</text>
+                <text transform="rotate(-13.5, 170, 245)" x="170" y="66.5">A</text>
+                <text transform="rotate(0, 170, 245)" x="170" y="66.5">N</text>
+                <text transform="rotate(13.5, 170, 245)" x="170" y="66.5">H</text>
+                <text transform="rotate(27, 170, 245)" x="170" y="66.5">Ã</text>
+              </g>
+
+              <!-- Letras TARDE: Vermelho Oficial CPM, perfeitamente centralizadas no R -->
+              <g id="groupTurnoTarde" 
+                 font-family="'Montserrat', 'Arial Black', sans-serif" 
+                 font-weight="900" 
+                 font-size="34px" 
+                 fill="#dc2626" 
+                 text-anchor="middle"
+                 style="filter: drop-shadow(0.5px 1.5px 1px rgba(0,0,0,0.35)); display: none; transition: fill 0.25s ease;"
+              >
+                <text transform="rotate(-27, 170, 245)" x="170" y="66.5">T</text>
+                <text transform="rotate(-13.5, 170, 245)" x="170" y="66.5">A</text>
+                <text transform="rotate(0, 170, 245)" x="170" y="66.5">R</text>
+                <text transform="rotate(13.5, 170, 245)" x="170" y="66.5">D</text>
+                <text transform="rotate(27, 170, 245)" x="170" y="66.5">E</text>
+              </g>
+            </svg>
+          </div>
+
+          <span id="descTurnoCor" class="text-[10px] text-gray-400 mt-1 text-center">
+            Borda e letras em Azul Royal Oficial (Turno Manhã)
           </span>
         </div>
       </div>
 
-      <!-- 4. Quantidade de Cada Modelo -->
-      <div class="bg-[#18201a] p-4 rounded-xl border border-[#2a382c] space-y-3">
+      <!-- ==================== SEÇÃO 4: QUANTIDADES E VALORES ==================== -->
+      <div class="bg-[#18201a] p-4 rounded-xl border border-[#2a382c] space-y-3 border-t">
         <label class="block text-xs font-semibold text-gray-300 uppercase tracking-wide">
-          4. Escolha as quantidades desejadas:
+          4. Quantidades desejadas no seu kit:
         </label>
         
-        <!-- Quantidade Modelo Agasalho (Branca com Azul) -->
-        <div class="flex items-center justify-between bg-[#111712] p-3 rounded-lg border border-[#2a382c]">
-          <div class="flex items-center gap-2.5 cursor-pointer" onclick="setModelo('AGASALHO')">
-            <span class="w-3.5 h-3.5 rounded-full bg-[#132c8c] border border-white/80"></span>
+        <!-- Biriba Agasalho (Branca com Azul) -->
+        <div class="flex items-center justify-between bg-[#111712] p-2.5 rounded-lg border border-[#2a382c]">
+          <div class="flex items-center gap-2 cursor-pointer" onclick="setModelo('AGASALHO')">
+            <span class="w-3 h-3 rounded-full bg-[#132c8c] border border-white/80"></span>
             <div>
-              <div class="text-xs font-bold text-white flex items-center gap-1.5">
-                <span>🧥 BRANCA COM AZUL</span>
-                <span class="text-[10px] text-lime-400 bg-lime-950/70 px-1.5 py-0.5 rounded border border-lime-800/60 font-mono">Agasalho</span>
+              <div class="text-xs font-bold text-white flex items-center gap-1">
+                <span>🧥 BIRIBA AGASALHO</span>
+                <span class="text-[9px] text-lime-400 bg-lime-950/70 px-1 py-0.5 rounded border border-lime-800/60 font-mono">Branca</span>
               </div>
-              <div class="text-[11px] text-gray-400">R$ 20,00 cada</div>
+              <div class="text-[10px] text-gray-400">R$ 20,00 cada</div>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <button type="button" onclick="changeQty('agasalho', -1)" class="w-8 h-8 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-sm border border-[#3b593f] transition-all">-</button>
-            <span id="qtyAgasalho" class="w-6 text-center font-bold text-white text-sm">1</span>
-            <button type="button" onclick="changeQty('agasalho', 1)" class="w-8 h-8 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-sm border border-[#3b593f] transition-all">+</button>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="changeQty('agasalho', -1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">-</button>
+            <span id="qtyAgasalho" class="w-5 text-center font-bold text-white text-xs">1</span>
+            <button type="button" onclick="changeQty('agasalho', 1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">+</button>
           </div>
         </div>
 
-        <!-- Quantidade Modelo Farda (Cinza com Amarelo) -->
-        <div class="flex items-center justify-between bg-[#111712] p-3 rounded-lg border border-[#2a382c]">
-          <div class="flex items-center gap-2.5 cursor-pointer" onclick="setModelo('FARDA')">
-            <span class="w-3.5 h-3.5 rounded-full bg-[#f0c20a] border border-black/80"></span>
+        <!-- Biriba Farda (Cinza com Amarelo) -->
+        <div class="flex items-center justify-between bg-[#111712] p-2.5 rounded-lg border border-[#2a382c]">
+          <div class="flex items-center gap-2 cursor-pointer" onclick="setModelo('FARDA')">
+            <span class="w-3 h-3 rounded-full bg-[#f0c20a] border border-black/80"></span>
             <div>
-              <div class="text-xs font-bold text-white flex items-center gap-1.5">
-                <span>👔 CINZA COM AMARELO</span>
-                <span class="text-[10px] text-amber-400 bg-amber-950/70 px-1.5 py-0.5 rounded border border-amber-800/60 font-mono">Farda</span>
+              <div class="text-xs font-bold text-white flex items-center gap-1">
+                <span>👔 BIRIBA FARDA</span>
+                <span class="text-[9px] text-amber-400 bg-amber-950/70 px-1 py-0.5 rounded border border-amber-800/60 font-mono">Cinza</span>
               </div>
-              <div class="text-[11px] text-gray-400">R$ 20,00 cada</div>
+              <div class="text-[10px] text-gray-400">R$ 20,00 cada</div>
             </div>
           </div>
-          <div class="flex items-center gap-2">
-            <button type="button" onclick="changeQty('farda', -1)" class="w-8 h-8 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-sm border border-[#3b593f] transition-all">-</button>
-            <span id="qtyFarda" class="w-6 text-center font-bold text-white text-sm">1</span>
-            <button type="button" onclick="changeQty('farda', 1)" class="w-8 h-8 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-sm border border-[#3b593f] transition-all">+</button>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="changeQty('farda', -1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">-</button>
+            <span id="qtyFarda" class="w-5 text-center font-bold text-white text-xs">1</span>
+            <button type="button" onclick="changeQty('farda', 1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">+</button>
           </div>
         </div>
 
-        <!-- Resumo do Pedido -->
+        <!-- Divisa de Série CPM -->
+        <div class="flex items-center justify-between bg-[#111712] p-2.5 rounded-lg border border-[#2a382c]">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-[#132c8c] border border-amber-400"></span>
+            <div>
+              <div class="text-xs font-bold text-white flex items-center gap-1">
+                <span>⭐ DIVISA DE SÉRIE</span>
+                <span id="tagDivisaQtd" class="text-[9px] text-amber-400 bg-amber-950/70 px-1 py-0.5 rounded border border-amber-800/60 font-mono">Nº 1</span>
+              </div>
+              <div class="text-[10px] text-gray-400">R$ 10,00 cada</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="changeQty('divisa', -1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">-</button>
+            <span id="qtyDivisa" class="w-5 text-center font-bold text-white text-xs">1</span>
+            <button type="button" onclick="changeQty('divisa', 1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">+</button>
+          </div>
+        </div>
+
+        <!-- Divisa de Turno CPM -->
+        <div class="flex items-center justify-between bg-[#111712] p-2.5 rounded-lg border border-[#2a382c]">
+          <div class="flex items-center gap-2">
+            <span id="dotTurnoQtd" class="w-3 h-3 rounded-full bg-[#132c8c] border border-cyan-400"></span>
+            <div>
+              <div class="text-xs font-bold text-white flex items-center gap-1">
+                <span>🌙 DIVISA DE TURNO</span>
+                <span id="tagTurnoQtd" class="text-[9px] text-cyan-400 bg-cyan-950/70 px-1 py-0.5 rounded border border-cyan-800/60 font-mono">MANHÃ</span>
+              </div>
+              <div class="text-[10px] text-gray-400">R$ 10,00 cada</div>
+            </div>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <button type="button" onclick="changeQty('turno', -1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">-</button>
+            <span id="qtyTurno" class="w-5 text-center font-bold text-white text-xs">1</span>
+            <button type="button" onclick="changeQty('turno', 1)" class="w-7 h-7 rounded-lg bg-[#233827] text-white font-bold hover:bg-[#344d37] active:scale-95 flex items-center justify-center text-xs border border-[#3b593f] transition-all">+</button>
+          </div>
+        </div>
+
+        <!-- Resumo -->
         <div class="flex justify-between items-center pt-2.5 border-t border-[#2a382c] text-xs">
-          <span class="text-gray-300">Total de biribas: <strong id="totalItems" class="text-white font-mono">2</strong></span>
-          <span class="text-sm font-extrabold text-[#86efac]">Valor Total: <strong id="totalPreco">R$ 40,00</strong></span>
+          <span class="text-gray-300">Total de itens: <strong id="totalItems" class="text-white font-mono">4</strong></span>
+          <span class="text-sm font-extrabold text-[#86efac]">Valor Total: <strong id="totalPreco">R$ 60,00</strong></span>
         </div>
       </div>
 
@@ -258,7 +539,7 @@
         id="btnWhatsApp"
         href="#" 
         target="_blank"
-        class="w-full py-3.5 px-4 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-[#052e16] font-extrabold text-sm sm:text-base rounded-xl shadow-xl hover:shadow-green-900/40 transition-all flex items-center justify-center gap-2 text-center"
+        class="w-full py-4 px-4 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-[#052e16] font-extrabold text-sm sm:text-base rounded-xl shadow-xl hover:shadow-green-900/40 transition-all flex items-center justify-center gap-2 text-center"
       >
         <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
         <span id="btnText">ENCOMENDAR PELO WHATSAPP</span>
@@ -273,8 +554,23 @@
   <script>
     let currentModelo = 'AGASALHO';
     let currentPosto = 'ALUNA';
+    let currentSerie = '1';
+    let currentTurno = 'MANHA'; // 'MANHA' ou 'TARDE'
+    
     let qtyAgasalho = 1;
     let qtyFarda = 1;
+    let qtyDivisa = 1;
+    let qtyTurno = 1;
+
+    const serieLabels = {
+      '6': '6º Ano (Fundamental)',
+      '7': '7º Ano (Fundamental)',
+      '8': '8º Ano (Fundamental)',
+      '9': '9º Ano (Fundamental)',
+      '1': '1º Ano (Ensino Médio)',
+      '2': '2º Ano (Ensino Médio)',
+      '3': '3º Ano (Ensino Médio)'
+    };
 
     function setModelo(modelo) {
       currentModelo = modelo;
@@ -284,51 +580,36 @@
       const btnAgasalho = document.getElementById('btn-mod-agasalho');
       const btnFarda = document.getElementById('btn-mod-farda');
       const badgeModelo = document.getElementById('badgeModelo');
-      const dotLinha = document.getElementById('dotLinha');
-      const txtLinha = document.getElementById('txtLinha');
-      const dotTecido = document.getElementById('dotTecido');
-      const txtTecido = document.getElementById('txtTecido');
 
       if (modelo === 'FARDA') {
         root.style.setProperty('--cor-linha', '#f0c20a');
-        container.className = "w-[380px] h-[80px] max-w-full fabric-farda biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all";
+        container.className = "w-[360px] h-[76px] max-w-full fabric-farda biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all";
         innerStitch.style.borderColor = 'rgba(240, 194, 10, 0.3)';
 
-        btnFarda.className = "py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md";
-        btnAgasalho.className = "py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
+        btnFarda.className = "py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md";
+        btnAgasalho.className = "py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
 
-        badgeModelo.textContent = "VISUALIZANDO: FARDA";
+        badgeModelo.textContent = "PRÉVIA: FARDA";
         badgeModelo.className = "text-yellow-400 font-semibold uppercase";
-
-        dotLinha.className = "w-2 h-2 rounded-full bg-[#f0c20a]";
-        txtLinha.textContent = "Amarelo Ouro";
-        dotTecido.className = "w-2 h-2 rounded-full bg-[#454b52] border border-gray-400";
-        txtTecido.textContent = "Cinza Grafite (Farda)";
       } else {
         root.style.setProperty('--cor-linha', '#132c8c');
-        container.className = "w-[380px] h-[80px] max-w-full fabric-agasalho biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all";
+        container.className = "w-[360px] h-[76px] max-w-full fabric-agasalho biriba-frame rounded-sm flex flex-col items-center justify-center relative select-none shadow-2xl transition-all";
         innerStitch.style.borderColor = 'rgba(19, 44, 140, 0.25)';
 
-        btnAgasalho.className = "py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md";
-        btnFarda.className = "py-2.5 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
+        btnAgasalho.className = "py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md";
+        btnFarda.className = "py-2 px-2 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-0.5 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
 
-        badgeModelo.textContent = "VISUALIZANDO: AGASALHO";
+        badgeModelo.textContent = "PRÉVIA: AGASALHO";
         badgeModelo.className = "text-lime-400 font-semibold uppercase";
-
-        dotLinha.className = "w-2 h-2 rounded-full bg-[#132c8c]";
-        txtLinha.textContent = "Azul Royal";
-        dotTecido.className = "w-2 h-2 rounded-full bg-white border border-gray-400";
-        txtTecido.textContent = "Tecido Branco (Agasalho)";
       }
 
-      renderBiriba();
+      renderAll();
     }
 
     function setPosto(posto) {
       currentPosto = posto;
       const inputNome = document.getElementById('inputNome');
 
-      // Se for ALUNO muda para HENRIQUE; se for ALUNA muda para MONIQUE
       if (posto === 'ALUNO') {
         if (inputNome.value === 'MONIQUE' || !inputNome.value.trim()) {
           inputNome.value = 'HENRIQUE';
@@ -340,49 +621,139 @@
       }
 
       document.querySelectorAll('.posto-btn').forEach(btn => {
-        btn.className = "posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]";
+        btn.className = "posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026]";
       });
 
       if (posto === 'ALUNA') {
-        document.getElementById('btn-aluna').className = "posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
+        document.getElementById('btn-aluna').className = "posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
       } else if (posto === 'ALUNO') {
-        document.getElementById('btn-aluno').className = "posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
+        document.getElementById('btn-aluno').className = "posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
       } else {
-        document.getElementById('btn-outro').className = "posto-btn py-2 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
+        document.getElementById('btn-outro').className = "posto-btn py-1.5 px-2 rounded-lg text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] transition-all";
       }
 
-      renderBiriba();
+      renderAll();
+    }
+
+    function setSerie(serie) {
+      currentSerie = serie;
+
+      document.querySelectorAll('.serie-btn').forEach(btn => {
+        btn.className = "serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#1c261e] border border-[#334636] text-gray-300 transition-all hover:bg-[#233026] text-center";
+      });
+
+      const activeBtn = document.getElementById(`btn-serie-${serie}`);
+      if (activeBtn) {
+        activeBtn.className = "serie-btn py-2 px-1 rounded-xl text-xs font-bold bg-[#233827] border border-[#4d7c0f] text-[#86efac] shadow-md transition-all text-center";
+      }
+
+      if (qtyDivisa === 0) {
+        qtyDivisa = 1;
+        document.getElementById('qtyDivisa').textContent = qtyDivisa;
+      }
+
+      renderAll();
+    }
+
+    function setTurno(turno) {
+      currentTurno = turno;
+      const btnManha = document.getElementById('btn-turno-manha');
+      const btnTarde = document.getElementById('btn-turno-tarde');
+      const patchBg = document.getElementById('turnoPatchBg');
+      const innerStitch = document.getElementById('turnoInnerStitch');
+      const groupManha = document.getElementById('groupTurnoManha');
+      const groupTarde = document.getElementById('groupTurnoTarde');
+      const labelBadge = document.getElementById('labelTurnoBadge');
+      const descCor = document.getElementById('descTurnoCor');
+      const dotTurnoQtd = document.getElementById('dotTurnoQtd');
+      const tagTurnoQtd = document.getElementById('tagTurnoQtd');
+
+      if (turno === 'TARDE') {
+        btnTarde.className = "py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#3b1212] border-[#b91c1c] text-[#fca5a5] shadow-md";
+        btnManha.className = "py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
+
+        patchBg.setAttribute('stroke', '#dc2626');
+        innerStitch.setAttribute('stroke', 'rgba(220, 38, 38, 0.4)');
+        groupManha.style.display = 'none';
+        groupTarde.style.display = 'block';
+
+        labelBadge.textContent = 'PRÉVIA: TARDE (VERMELHO)';
+        labelBadge.className = 'text-red-400 font-semibold uppercase';
+        descCor.textContent = 'Borda e letras em Vermelho Oficial CPM (Turno Tarde)';
+
+        dotTurnoQtd.className = 'w-3 h-3 rounded-full bg-[#dc2626] border border-red-400';
+        tagTurnoQtd.textContent = 'TARDE';
+        tagTurnoQtd.className = 'text-[9px] text-red-400 bg-red-950/70 px-1 py-0.5 rounded border border-red-800/60 font-mono';
+      } else {
+        btnManha.className = "py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#233827] border-[#4d7c0f] text-[#86efac] shadow-md";
+        btnTarde.className = "py-2.5 px-3 rounded-xl text-xs font-bold border transition-all flex flex-col items-center gap-1 text-center bg-[#1c261e] border-[#334636] text-gray-300 hover:bg-[#233026]";
+
+        patchBg.setAttribute('stroke', '#132c8c');
+        innerStitch.setAttribute('stroke', 'rgba(19, 44, 140, 0.35)');
+        groupManha.style.display = 'block';
+        groupTarde.style.display = 'none';
+
+        labelBadge.textContent = 'PRÉVIA: MANHÃ (AZUL)';
+        labelBadge.className = 'text-cyan-400 font-semibold uppercase';
+        descCor.textContent = 'Borda e letras em Azul Royal Oficial (Turno Manhã)';
+
+        dotTurnoQtd.className = 'w-3 h-3 rounded-full bg-[#132c8c] border border-cyan-400';
+        tagTurnoQtd.textContent = 'MANHÃ';
+        tagTurnoQtd.className = 'text-[9px] text-cyan-400 bg-cyan-950/70 px-1 py-0.5 rounded border border-cyan-800/60 font-mono';
+      }
+
+      if (qtyTurno === 0) {
+        qtyTurno = 1;
+        document.getElementById('qtyTurno').textContent = qtyTurno;
+      }
+
+      renderAll();
     }
 
     function changeQty(tipo, delta) {
       if (tipo === 'agasalho') {
         qtyAgasalho = Math.max(0, qtyAgasalho + delta);
         document.getElementById('qtyAgasalho').textContent = qtyAgasalho;
-      } else {
+      } else if (tipo === 'farda') {
         qtyFarda = Math.max(0, qtyFarda + delta);
         document.getElementById('qtyFarda').textContent = qtyFarda;
+      } else if (tipo === 'divisa') {
+        qtyDivisa = Math.max(0, qtyDivisa + delta);
+        document.getElementById('qtyDivisa').textContent = qtyDivisa;
+      } else if (tipo === 'turno') {
+        qtyTurno = Math.max(0, qtyTurno + delta);
+        document.getElementById('qtyTurno').textContent = qtyTurno;
       }
 
-      // Se ambos forem 0, mantém ao menos 1 naquele que foi clicado
-      if (qtyAgasalho === 0 && qtyFarda === 0) {
-        if (tipo === 'agasalho') qtyAgasalho = 1;
+      // Garantir ao menos 1 item no pedido geral
+      if (qtyAgasalho === 0 && qtyFarda === 0 && qtyDivisa === 0 && qtyTurno === 0) {
+        if (tipo === 'turno') qtyTurno = 1;
+        else if (tipo === 'divisa') qtyDivisa = 1;
+        else if (tipo === 'agasalho') qtyAgasalho = 1;
         else qtyFarda = 1;
+
         document.getElementById('qtyAgasalho').textContent = qtyAgasalho;
         document.getElementById('qtyFarda').textContent = qtyFarda;
+        document.getElementById('qtyDivisa').textContent = qtyDivisa;
+        document.getElementById('qtyTurno').textContent = qtyTurno;
       }
 
-      renderBiriba();
+      renderAll();
     }
 
-    function renderBiriba() {
+    function renderAll() {
       const inputNome = document.getElementById('inputNome');
       const displayPosto = document.getElementById('displayPosto');
       const displayNome = document.getElementById('displayNome');
+      const divisaNumberDisplay = document.getElementById('divisaNumberDisplay');
+      const labelSerieBadge = document.getElementById('labelSerieBadge');
+      const tagDivisaQtd = document.getElementById('tagDivisaQtd');
       const btnWhatsApp = document.getElementById('btnWhatsApp');
       const totalItems = document.getElementById('totalItems');
       const totalPreco = document.getElementById('totalPreco');
       const btnText = document.getElementById('btnText');
 
+      // 1. Biriba
       const defaultNome = currentPosto === 'ALUNO' ? 'HENRIQUE' : 'MONIQUE';
       const nome = inputNome.value.trim().toUpperCase() || defaultNome;
 
@@ -395,20 +766,20 @@
 
       displayNome.textContent = nome;
 
-      let uniformSize = '28px';
+      let uniformSize = '26px';
       let uniformSpacing = '0.5px';
 
       if (nome.length > 12) {
-        uniformSize = '20px';
+        uniformSize = '19px';
         uniformSpacing = '-0.5px';
       } else if (nome.length > 9) {
-        uniformSize = '23px';
+        uniformSize = '22px';
         uniformSpacing = '0px';
       } else if (nome.length > 7) {
-        uniformSize = '25px';
+        uniformSize = '24px';
         uniformSpacing = '0.5px';
       } else {
-        uniformSize = '28px';
+        uniformSize = '26px';
         uniformSpacing = '0.5px';
       }
 
@@ -420,33 +791,47 @@
         displayPosto.style.letterSpacing = uniformSpacing;
       }
 
-      // Totais
-      const totalQtd = qtyAgasalho + qtyFarda;
-      const valorTotal = totalQtd * 20;
+      // 2. Divisa de Série
+      divisaNumberDisplay.textContent = currentSerie;
+      const serieDesc = serieLabels[currentSerie] || `${currentSerie}º Ano`;
+      labelSerieBadge.textContent = `Nº ${currentSerie} • ${serieDesc.toUpperCase()}`;
+      tagDivisaQtd.textContent = `Nº ${currentSerie}`;
 
-      totalItems.textContent = `${totalQtd} biriba${totalQtd > 1 ? 's' : ''}`;
+      // 3. Totais e Fechamento
+      const totalQtd = qtyAgasalho + qtyFarda + qtyDivisa + qtyTurno;
+      const valorTotal = (qtyAgasalho * 20) + (qtyFarda * 20) + (qtyDivisa * 10) + (qtyTurno * 10);
+
+      totalItems.textContent = `${totalQtd} item${totalQtd > 1 ? 's' : ''}`;
       totalPreco.textContent = `R$ ${valorTotal},00`;
-      btnText.textContent = `PEDIR ${totalQtd} BIRIBA${totalQtd > 1 ? 'S' : ''} (R$ ${valorTotal},00)`;
+      btnText.textContent = `ENCOMENDAR ${totalQtd} ITEM${totalQtd > 1 ? 'S' : ''} (R$ ${valorTotal},00)`;
 
       const textoCompleto = currentPosto ? `${currentPosto} ${nome}` : nome;
 
       let itensPedido = '';
       if (qtyAgasalho > 0) {
-        itensPedido += `   • ${qtyAgasalho}x Biriba BRANCA com AZUL (Agasalho)\n`;
+        itensPedido += `   • ${qtyAgasalho}x Biriba BRANCA com AZUL (Agasalho) - R$ ${qtyAgasalho * 20},00\n`;
       }
       if (qtyFarda > 0) {
-        itensPedido += `   • ${qtyFarda}x Biriba CINZA com AMARELO (Farda)\n`;
+        itensPedido += `   • ${qtyFarda}x Biriba CINZA com AMARELO (Farda) - R$ ${qtyFarda * 20},00\n`;
+      }
+      if (qtyDivisa > 0) {
+        itensPedido += `   • ${qtyDivisa}x Divisa de Série: Nº ${currentSerie} (${serieDesc}) - R$ ${qtyDivisa * 10},00\n`;
+      }
+      if (qtyTurno > 0) {
+        const descCorTurno = currentTurno === 'TARDE' ? 'Vermelho' : 'Azul Royal';
+        const nomeTurno = currentTurno === 'TARDE' ? 'TARDE' : 'MANHÃ';
+        itensPedido += `   • ${qtyTurno}x Divisa de Turno: ${nomeTurno} (Bordado em ${descCorTurno}) - R$ ${qtyTurno * 10},00\n`;
       }
 
-      const mensagem = `Olá! Gostaria de encomendar BIRIBA(s) no padrão oficial do Colégio (12cm x 2,5cm):\n\n` +
-        `• Nome a bordar: ${textoCompleto}\n` +
-        `• Quantidades solicitadas:\n${itensPedido}\n` +
-        `• Total: ${totalQtd} biriba(s) - Valor total: R$ ${valorTotal},00`;
+      const mensagem = `Olá! Gostaria de encomendar bordados para Colégio Militar no padrão oficial:\n\n` +
+        (qtyAgasalho > 0 || qtyFarda > 0 ? `• Nome a bordar na Biriba: ${textoCompleto}\n` : '') +
+        `• Itens solicitados:\n${itensPedido}\n` +
+        `• Total: ${totalQtd} item(ns) - Valor total: R$ ${valorTotal},00`;
 
       btnWhatsApp.href = `https://wa.me/5542999538715?text=${encodeURIComponent(mensagem)}`;
     }
 
-    renderBiriba();
+    renderAll();
   </script>
 </body>
 </html>
